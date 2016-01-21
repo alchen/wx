@@ -1,1 +1,1 @@
-# wx
+# WeChat Desktop Client in Electron

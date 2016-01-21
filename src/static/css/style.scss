@@ -1,0 +1,85 @@
+@import 'spinner';
+@import 'animate';
+
+$header-height: 2.5rem;
+$frame-height: calc(100% - #{$header-height});
+
+$bg-dark: #f3f3f3;
+
+$blue: #5ae;
+
+* {
+  box-sizing: border-box;
+}
+
+#header {
+  height: $header-height;
+  background-color: $bg-dark;
+  box-shadow: 0 0 .5rem 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.frame {
+  height: $frame-height;
+}
+
+#prompt {
+  background: $blue;
+
+  > button {
+    padding: .75rem;
+    height: 3rem;
+    width: 10rem;
+    border: 0;
+    border-radius: .25rem;
+    color: #000;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -1.5rem;
+    margin-left: -5rem;
+
+    color: $blue;
+    background: #fff;
+    box-shadow: 0 0 .5rem 0 rgba(0, 0, 0, 0.2);
+    transition: margin .2s;
+    -webkit-animation: flipInX .2s;
+
+    &:active {
+      margin-top: -1rem;
+    }
+  }
+}
+
+#verify {
+  background: $blue;
+
+  > img, > .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+  > img {
+    width: 14rem;
+    height: 14rem;
+    padding: 1.21875rem;
+
+    margin-top: -7rem;
+    margin-left: -7rem;
+
+    box-shadow: 0 0 .5rem 0 rgba(0, 0, 0, 0.2);
+
+    background-color: #fff;
+
+    -webkit-animation: flipInX .2s;
+  }
+
+  > .spinner {
+    margin-left: -1.25rem;
+    margin-top: -1.25rem;
+    background-color: #fff;
+  }
+}

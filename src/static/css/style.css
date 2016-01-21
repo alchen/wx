@@ -1,0 +1,99 @@
+/* http://tobiasahlin.com/spinkit/ */
+.spinner {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  margin: 100px auto;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out; }
+
+@-webkit-keyframes sk-rotateplane {
+  0% {
+    -webkit-transform: perspective(120px); }
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg); }
+  100% {
+    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg); } }
+
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg); }
+  50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg); }
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg); } }
+
+/* https://github.com/daneden/animate.css */
+@keyframes flipInX {
+  from {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    animation-timing-function: ease-in;
+    opacity: 0; }
+  40% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    animation-timing-function: ease-in; }
+  60% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1; }
+  80% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg); }
+  to {
+    transform: perspective(400px); } }
+
+* {
+  box-sizing: border-box; }
+
+#header {
+  height: 2.5rem;
+  background-color: #f3f3f3;
+  box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1; }
+
+.frame {
+  height: calc(100% - 2.5rem); }
+
+#prompt {
+  background: #5ae; }
+  #prompt > button {
+    padding: .75rem;
+    height: 3rem;
+    width: 10rem;
+    border: 0;
+    border-radius: .25rem;
+    color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -1.5rem;
+    margin-left: -5rem;
+    color: #5ae;
+    background: #fff;
+    box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.2);
+    transition: margin .2s;
+    -webkit-animation: flipInX .2s; }
+    #prompt > button:active {
+      margin-top: -1rem; }
+
+#verify {
+  background: #5ae; }
+  #verify > img, #verify > .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%; }
+  #verify > img {
+    width: 14rem;
+    height: 14rem;
+    padding: 1.21875rem;
+    margin-top: -7rem;
+    margin-left: -7rem;
+    box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    -webkit-animation: flipInX .2s; }
+  #verify > .spinner {
+    margin-left: -1.25rem;
+    margin-top: -1.25rem;
+    background-color: #fff; }
